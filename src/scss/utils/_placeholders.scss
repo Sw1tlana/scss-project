@@ -1,27 +1,27 @@
 @use 'mixins' as mx;
 
-%main title {
+%main-title {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.66;
     letter-spacing: 0.02em;
 }
 
-%section title {
+%section-title {
     font-size: 20px;
     font-weight: 600;
     line-height: 1.4;
     letter-spacing: 0.025em;
 }
 
-%main text {
+%main-text {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.03em;
 }
 
-%accent text {
+%accent-text {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;

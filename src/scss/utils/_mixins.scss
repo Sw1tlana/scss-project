@@ -12,7 +12,7 @@
         $width: $width - 0.02px;
     }
 
-    @media only screen and (#{type}-width: $width) {
+    @media only screen and (#{$type}-width: #{$width}) {
       @if $is-retina {
           @media(min-device-pixel-ration: 2),
           (min-resolution: 192dpi),
