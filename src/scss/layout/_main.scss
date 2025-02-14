@@ -20,7 +20,7 @@
        grid-template-columns: repeat(2, 1fr);
        grid-template-areas: 
        'welcome welcome'
-       'co-worcers co-worcers'
+       'co-workers co-workers'
        'tasks reports';
     }
 
@@ -30,7 +30,7 @@
         grid-template-columns: repeat(auto-fit, minmax(455px, 629px));
         grid-template-areas: 
         'welcome welcome'
-        'co-worcers tasks'
-        'co-worcers reports';
+        'co-workers tasks'
+        'co-workers reports';
     }
 }
