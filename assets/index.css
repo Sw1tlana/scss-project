@@ -217,6 +217,60 @@ summary {
   grid-template-areas: "welcome" "co-workers" "tasks" "reports";
 }
 
+.btn {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  gap: 4px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 8px 12px;
+  color: #fafafb;
+  border-radius: 12px;
+  -webkit-transition-property: background-color, color, -webkit-box-shadow;
+  transition-property: background-color, color, -webkit-box-shadow;
+  -moz-transition-property: background-color, color, box-shadow;
+  transition-property: background-color, color, box-shadow;
+  transition-property: background-color, color, box-shadow, -webkit-box-shadow;
+  -webkit-transition-duration: 300ms;
+     -moz-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
+     -moz-transition-timing-function: ease;
+          transition-timing-function: ease;
+  font: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  margin: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+.btn .btn-inner {
+  font-size: 14px;
+  font-weight: 32px;
+  line-height: 1.4285714286;
+  letter-spacing: 0.0357142857;
+}
+.btn .btn-icon {
+  fill: currentColor;
+}
+
+.btn--primary {
+  background-color: #F07F2E;
+}
+.btn--primary:active {
+  background-color: #D14A00;
+}
+.btn--primary[disabled] {
+  background-color: #B5B5BE;
+}
+
 .welcome {
   grid-area: welcome;
 }
@@ -238,7 +292,7 @@ summary {
     gap: 36px;
     padding: 36px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "welcome welcome" "co-worcers co-worcers" "tasks reports";
+    grid-template-areas: "welcome welcome" "co-workers co-workers" "tasks reports";
   }
 }
 
@@ -263,7 +317,7 @@ summary {
   .main {
     grid-area: main;
     grid-template-columns: repeat(auto-fit, minmax(455px, 629px));
-    grid-template-areas: "welcome welcome" "co-worcers tasks" "co-worcers reports";
+    grid-template-areas: "welcome welcome" "co-workers tasks" "co-workers reports";
   }
 }
 
@@ -284,5 +338,14 @@ summary {
     opacity: 1;
     pointer-events: initial;
     visibility: visible;
+  }
+}
+
+@media (hover: hover) {
+  .btn--primary:hover, .btn--primary:focus {
+    -webkit-box-shadow: 0px 4px 10px 0px rgba(240, 127, 46, 0.25);
+            box-shadow: 0px 4px 10px 0px rgba(240, 127, 46, 0.25);
+    /* accent-secondary */
+    background: #F15C27;
   }
 }
