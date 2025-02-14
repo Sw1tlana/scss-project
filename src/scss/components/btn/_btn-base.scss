@@ -25,7 +25,7 @@
 
     .btn-inner {
         font-size: $btn-text-size;
-        font-weight: $btn-layer-min-width;
+        font-weight: $btn-text-width;
         line-height: #{calc($btn-line-height / $btn-text-size)};
         letter-spacing: #{calc($btn-text-spacing / $btn-text-size)};
     }
