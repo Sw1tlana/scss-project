@@ -29,9 +29,9 @@
 
         <li class="menu-item">
           <a 
-          class="menu-link" 
+          class="menu-link current" 
           href="">
-          <svg class="menu-btn-icon" width="20" height="20">
+          <svg class="menu-icon" width="20" height="20">
             <use href="./src/img/icons.svg#icon-overview"></use>
           </svg>
           Overview 
@@ -42,7 +42,7 @@
           <a 
           class="menu-link" 
           href="./index.html">
-          <svg class="menu-btn-icon" width="20" height="20">
+          <svg class="menu-icon" width="20" height="20">
             <use href="./src/img/icons.svg#icon-contact"></use>
           </svg> 
           Contact
@@ -53,7 +53,7 @@
           <a 
           class="menu-link" 
           href="">
-          <svg class="menu-btn-icon" width="20" height="20">
+          <svg class="menu-icon" width="20" height="20">
             <use href="./src/img/icons.svg#icon-companies"></use>
           </svg> 
           Companies
@@ -64,7 +64,7 @@
           <a 
           class="menu-link"
           href="">
-          <svg class="menu-btn-icon" width="20" height="20">
+          <svg class="menu-icon" width="20" height="20">
             <use href="./src/img/icons.svg#icon-coin"></use>
           </svg>
           Deals 
@@ -75,7 +75,7 @@
           <a
           class="menu-link" 
           href="">
-          <svg class="menu-btn-icon" width="20" height="20">
+          <svg class="menu-icon" width="20" height="20">
             <use href="./src/img/icons.svg#icon-document"></use>
           </svg>
           Document 
@@ -86,10 +86,11 @@
           <a
           class="menu-link" 
           href="">
-          <svg class="menu-btn-icon" width="20" height="20">
+          <svg class="menu-icon" width="20" height="20">
             <use href="./src/img/icons.svg#icon-message"></use>
           </svg>
           Mesage 
+          <span class="menu-notification notification">8</span>
           </a>
         </li>
 
@@ -97,7 +98,7 @@
           <a
           class="menu-link" 
           href="">
-          <svg class="menu-btn-icon" width="20" height="20">
+          <svg class="menu-icon" width="20" height="20">
             <use href="./src/img/icons.svg#icon-calendar"></use>
           </svg>
           Calendar 
@@ -108,7 +109,7 @@
           <a
           class="menu-link" 
           href="">
-          <svg class="menu-btn-icon" width="20" height="20">
+          <svg class="menu-icon" width="20" height="20">
             <use href="./src/img/icons.svg#icon-report"></use>
           </svg>
           Report 
@@ -141,9 +142,17 @@
         placeholder="Search Something..."
         />
       </label>
-      <svg class="search-icon" width="24" height="24">
+
+      <button
+          class="notification-btn"
+          type="button"
+          data-notify="true"
+          aria-label="Bell button"
+      >
+      <svg class="notification-btn-icon" width="24" height="24">
         <use href="./src/img/icons.svg#icon-bell"></use>
       </svg>
+    </button>
     </header>
 
     <main class="main">
