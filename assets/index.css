@@ -154,10 +154,24 @@ meter {
   display: none;
 }
 
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.66;
+  letter-spacing: 0.02em;
+}
+
 body {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+.menu-btn, .menu-link {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
   letter-spacing: 0.03em;
 }
 
@@ -287,6 +301,168 @@ summary {
   grid-area: reports;
 }
 
+.menu {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #13131A;
+}
+
+.menu-list {
+  border-top: 1px solid;
+  border-color: #292932;
+}
+
+.menu-link {
+  -webkit-transition: 300ms ease;
+  -moz-transition: 300ms ease;
+  transition: 300ms ease;
+  -webkit-transition: "color";
+  -moz-transition: "color";
+  transition: "color";
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  gap: 24px;
+  padding: 16px 20px;
+}
+.menu-link:hover, .menu-link:focus {
+  color: #FAFAFB;
+}
+.menu-link.current {
+  color: #FAFAFB;
+}
+.menu-link.current::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: block;
+  width: 4px;
+  height: 32px;
+  border-radius: 0px 100px 0px 100px;
+  background-color: #FAFAFB;
+}
+
+.menu-icon {
+  fill: currentColor;
+}
+
+.menu-notification {
+  margin-left: auto;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  color: #F07F2E;
+}
+
+.notification {
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  display: block;
+  min-width: 28px;
+  height: 20px;
+  padding: 0 10px;
+  color: #FAFAFB;
+  border-radius: 12px;
+  background-color: #FC5A5A;
+}
+
+.menu-btn {
+  display: inline-block;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  gap: 10px;
+  margin-right: auto;
+  color: #FAFAFB;
+}
+.menu-btn-icon {
+  fill: currentColor;
+}
+.sidebar .menu-btn {
+  -webkit-transition: 600ms eas;
+  -moz-transition: 600ms eas;
+  transition: 600ms eas;
+  -webkit-transition: opacity, -webkit-transform;
+  transition: opacity, -webkit-transform;
+  -moz-transition: opacity, transform, -moz-transform;
+  transition: opacity, transform;
+  transition: opacity, transform, -webkit-transform, -moz-transform;
+  -webkit-transition-delay: 800ms, 300ms;
+     -moz-transition-delay: 800ms, 300ms;
+          transition-delay: 800ms, 300ms;
+  position: absolute;
+  top: 16px;
+  right: -36px;
+  opacity: 0;
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.sidebar.is-open .menu-btn {
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.notification-btn {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  min-width: 20px;
+  min-height: 20px;
+  color: #92929D;
+}
+.notification-btn-icon {
+  fill: currentColor;
+}
+.notification-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #F07F2E;
+  border-radius: 50%;
+}
+
+[data-notify=true]::after {
+  background-color: #FC5A5A;
+}
+
 @media only screen and (min-width: 768px) {
   .main {
     gap: 36px;
@@ -319,6 +495,12 @@ summary {
     grid-template-columns: repeat(auto-fit, minmax(455px, 629px));
     grid-template-areas: "welcome welcome" "co-workers tasks" "co-workers reports";
   }
+  .logo {
+    padding: 16px 20px;
+  }
+  .menu-btn {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 1199.98px) {
@@ -338,6 +520,22 @@ summary {
     opacity: 1;
     pointer-events: initial;
     visibility: visible;
+  }
+  .menu {
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    transition: 300ms ease;
+    -webkit-transition: -webkit-transform;
+    transition: -webkit-transform;
+    -moz-transition: transform, -moz-transform;
+    transition: transform;
+    transition: transform, -webkit-transform, -moz-transform;
+    max-width: 248px;
+  }
+  .menu .sidebar.is-open {
+    -webkit-transition-delay: 300ms;
+       -moz-transition-delay: 300ms;
+            transition-delay: 300ms;
   }
 }
 
