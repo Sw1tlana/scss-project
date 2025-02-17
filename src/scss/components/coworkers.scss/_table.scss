@@ -5,9 +5,10 @@
 
 .co-workers-table {
     width: 100%;
+    display: none;
 
-    @include mx.mq('md', 'mx') {
-        display: none;
+    @include mx.mq('md') {
+        display: table;
     }
 
     caption {

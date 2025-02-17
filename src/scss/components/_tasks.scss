@@ -1,16 +1,80 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
 .tasks {
-    grid-area: tasks;
+    // grid-area: tasks;
+
+    @extend %section-frame;
+    min-width: 340px;
+    max-height: 420px;
+
+    background-color: fn.get-color('dark-tertiary');
 }
 
-// .tasks-title {}
+.tasks-title {
+    @extend %details;
+    margin-bottom: 16px;
+    color: fn.get-color('light-secondary');
 
-// .tasks-list {}
+    span {
+        @extend %accent-text;
+        color: fn.get-color('light-primary')
+    }
+}
 
-// .tasks-item {}
+.tasks-list {
+    @include mx.scroll-bar;
 
-// .task-checkbox {}
+    max-height: 288px;
+    overflow: auto;
 
-// .tasks-input {}
+    @include mx.mq('lg') {
+        margin-right: -14px;
+    }
+}
+
+.tasks-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 16px 8px;
+    border-top: 1px solid;
+    border-color: fn.get-color('light-tertiary');
+}
+
+.task-checkbox {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.tasks-checkbox-icon {
+    @include mx.ease('fast', fill, background-color, background-color);
+    fill: fn.get-color('transparent');
+    border: 1px solid;
+    border-color: fn.get-color('light-tertiary');
+    border-radius: 4px;
+}
+
+.tasks-input:checked  {
+    fill: fn.get-color('light-primary');
+    background-color: fn.get-color('accent-primary');
+    border-color: fn.get-color('transparent');
+}
+
+.tasks-input:focus-visible {
+   outline: 2px solid;
+   outline-color: fn.get-color('light-tertiary');
+   outline-offset: 2px;
+}
 
 // .controls-btn-icon {
 
@@ -18,12 +82,39 @@
 
 // .minus {}
 
-// .tasks-info {}
+.tasks-info {
+    flex-grow: 1;
+}
 
-// .tasks-heading {}
+.tasks-heading {
+    @extend %details;
 
-// .tasks-desk {}
+    color: fn.get-color('light-primary');
+}
 
-// .tasks-btn {}
+.tasks-desk {
+    @extend %details;
+
+    color: fn.get-color('light-secondary');
+}
+
+.tasks-btn {
+    @include mx.ease('fast', outline);
+
+    width: 20px;
+    height: 20px;
+    color: fn.get-color('light-tertiary');
+    border-radius: 50%;
+
+    &:focus-visible {
+        outline: 2px solid;
+        outline-color: rgba(fn.get-color('light-tertiary'), 0.6);
+        outline-offset: 2px;
+    }
+
+    &-icon {
+        fill: fn.get-color('current');
+    }
+}
 
 // .controls-btn-icon {}

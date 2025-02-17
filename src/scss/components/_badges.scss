@@ -4,7 +4,7 @@
 @use '../utils/mixins' as mx;
 
 @each $value in 'danger', 'warning', 'success' {
-    .badge-#{value} {
+    .badge-#{$value} {
         @extend %details-accent;
 
         min-width: 96px;
