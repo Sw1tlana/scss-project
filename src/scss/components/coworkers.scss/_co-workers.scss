@@ -11,11 +11,6 @@
         background-color: fn.get-color('dark-tertiary');
         border-radius: 12px;
     }
-
-    @include mx.mq('xl') { 
-        min-height: 400px;
-        padding: 24px;
-    }
 }
 
 .co-workers-wrapper {
@@ -25,7 +20,14 @@
 
     border-radius: 12px;
     margin-bottom: 32px;
-    background-color: fn.get-color('dark-secondary');
+    background-color: fn.get-color('dark-tertiary');
+
+        @include mx.mq('xl') { 
+        max-height: 400px;
+        padding: 24px;
+        margin-bottom: 32px;
+        background-color: fn.get-color('dark-secondary');
+    }
 }
 
 .co-workers-title {

@@ -32,38 +32,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
 
     border-radius: 4px;
     border: 1px solid;
-    border-color: fn.get-color('light-tertiary');
+    color: fn.get-color('light-tertiary');
 
+    width: 24px;
+    height: 24px;
     cursor: pointer;
 }
 
 .plus {
-    @include mx.ease('fast', opacity);
-    transition-delay: 150ms;
+    opacity: 1; 
+    transition: opacity 0.3s ease;
 
-    opacity: 0;
     fill: fn.get-color('light-tertiary');
-
-    .co-workers-details:not([open]) & {
-        opacity: 1;
+    
+    .co-workers-details[open] & {
+        opacity: 0;
     }
 }
 
-
 .minus {
-    @include mx.ease('fast', opacity);
-    transition-delay: 150ms;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
 
-    opacity: 0;
-    fill: fn.get-color('light-tertiary');
-
-    .co-workers-details:not([open]) & {
-        opacity: 1;
+    fill: transparent;
+    stroke: fn.get-color('light-tertiary');
+    
+    .co-workers-details[open] & {
+        opacity: 1; 
     }
 }
 
@@ -105,7 +103,7 @@
 
 .co-workers-info {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    // grid-template-columns: repeat(2, 1fr);
     gap: 8px 12px;
 
     width: fit-content;

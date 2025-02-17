@@ -11,7 +11,7 @@ const refsMenu = {
 
 const toggleMenu = () => {
   const isMenuOpen =
-    refsMenu.openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
+  refsMenu.openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
   refsMenu.openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
   refsMenu.overlayMenu.classList.toggle('is-open');
 
