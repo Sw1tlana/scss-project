@@ -175,25 +175,30 @@ body {
   letter-spacing: 0.03em;
 }
 
-.co-workers-title span {
+.board-caption, .co-workers-table span, .co-workers-title span, .tasks-title span {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.03em;
 }
 
-.co-workers-details, .co-workers-title, .search-field .search-input, .menu-btn, .menu-link {
+.board-details, .person-caption, .board-teag, .co-workers-table caption, tbody, .co-workers-details, .co-workers-title, .search-field .search-input, .menu-btn, .menu-link, .tasks-title, .tasks-heading, .tasks-desk {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.43;
   letter-spacing: 0.03em;
 }
 
-.co-workers-position, .co-workers-accent {
+.badge-danger, .badge-warning, .badge-success, thead th, .co-workers-position, .co-workers-accent {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.42;
   letter-spacing: 0.03em;
+}
+
+.board-item, .tasks {
+  padding: 16px;
+  border-radius: 12px;
 }
 
 body {
@@ -332,7 +337,135 @@ summary {
 }
 
 .tasks {
-  grid-area: tasks;
+  min-width: 340px;
+  max-height: 420px;
+  background-color: #292932;
+}
+
+.tasks-title {
+  margin-bottom: 16px;
+  color: #B5B5BE;
+}
+.tasks-title span {
+  color: #FAFAFB;
+}
+
+.tasks-list {
+  max-height: 288px;
+  overflow: auto;
+}
+.tasks-list::-webkit-scrollbar {
+  width: 10px;
+}
+.tasks-list::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 104px;
+}
+.tasks-list::-webkit-scrollbar-track:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.tasks-list::-webkit-scrollbar-thumb {
+  background-color: #B5B5BE;
+  background-clip: content-box;
+  border: 1px solid transparent;
+  border-radius: 100px;
+}
+.tasks-list::-webkit-scrollbar-thumb:hover {
+  background-color: #F07F2E;
+}
+
+.tasks-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  gap: 16px;
+  padding: 16px 8px;
+  border-top: 1px solid;
+  border-color: #92929D;
+}
+
+.task-checkbox {
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+          justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.tasks-checkbox-icon {
+  -webkit-transition: 300ms ease;
+  -moz-transition: 300ms ease;
+  transition: 300ms ease;
+  -webkit-transition: fill, background-color, background-color;
+  -moz-transition: fill, background-color, background-color;
+  transition: fill, background-color, background-color;
+  border: 1px solid;
+  border-color: #92929D;
+  border-radius: 4px;
+}
+
+.tasks-input:checked {
+  fill: #FAFAFB;
+  background-color: #F07F2E;
+}
+
+.tasks-input:focus-visible {
+  outline: 2px solid;
+  outline-color: #92929D;
+  outline-offset: 2px;
+}
+
+.tasks-info {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+     -moz-box-flex: 1;
+          flex-grow: 1;
+}
+
+.tasks-heading {
+  color: #FAFAFB;
+}
+
+.tasks-desk {
+  color: #B5B5BE;
+}
+
+.tasks-btn {
+  -webkit-transition: 300ms ease;
+  -moz-transition: 300ms ease;
+  transition: 300ms ease;
+  -webkit-transition: outline;
+  -moz-transition: outline;
+  transition: outline;
+  width: 20px;
+  height: 20px;
+  color: #92929D;
+  border-radius: 50%;
+}
+.tasks-btn:focus-visible {
+  outline: 2px solid;
+  outline-color: rgba(146, 146, 157, 0.6);
+  outline-offset: 2px;
+}
+.tasks-btn-icon {
+  fill: currentColor;
 }
 
 .reports {
@@ -543,7 +676,7 @@ summary {
   margin-bottom: 40px;
   border-radius: 12px;
   margin-bottom: 32px;
-  background-color: #1C1C24;
+  background-color: #292932;
 }
 
 .co-workers-title {
@@ -554,7 +687,7 @@ summary {
   overflow-y: auto;
 }
 .co-workers-container::-webkit-scrollbar {
-  width: 14px;
+  width: 10px;
 }
 .co-workers-container::-webkit-scrollbar-track {
   background-color: transparent;
@@ -618,53 +751,38 @@ summary {
   -webkit-align-items: center;
      -moz-box-align: center;
           align-items: center;
-  width: 20px;
-  height: 20px;
   border-radius: 4px;
   border: 1px solid;
-  border-color: #92929D;
+  color: #92929D;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
 }
 
 .plus {
-  -webkit-transition: 300ms ease;
-  -moz-transition: 300ms ease;
-  transition: 300ms ease;
-  -webkit-transition: opacity;
-  -moz-transition: opacity;
-  transition: opacity;
-  -webkit-transition-delay: 150ms;
-     -moz-transition-delay: 150ms;
-          transition-delay: 150ms;
-  opacity: 0;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   fill: #92929D;
 }
-.co-workers-details:not([open]) .plus {
-  opacity: 1;
+.co-workers-details[open] .plus {
+  opacity: 0;
 }
 
 .minus {
-  -webkit-transition: 300ms ease;
-  -moz-transition: 300ms ease;
-  transition: 300ms ease;
-  -webkit-transition: opacity;
-  -moz-transition: opacity;
-  transition: opacity;
-  -webkit-transition-delay: 150ms;
-     -moz-transition-delay: 150ms;
-          transition-delay: 150ms;
   opacity: 0;
-  fill: #92929D;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  fill: transparent;
+  stroke: #92929D;
 }
-.co-workers-details:not([open]) .minus {
+.co-workers-details[open] .minus {
   opacity: 1;
 }
 
 .co-workers-bio {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-     -moz-box-flex: 1;
-          flex-grow: 1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -688,7 +806,7 @@ summary {
      object-position: top center;
 }
 
-.co-workers-controls {
+.co-workers-control {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -702,6 +820,7 @@ summary {
      -moz-box-pack: center;
           justify-content: center;
   gap: 16px;
+  margin-left: auto;
 }
 
 .controls-btn {
@@ -745,6 +864,187 @@ summary {
   color: #FAFAFB;
 }
 
+.co-workers-table {
+  width: 100%;
+  display: none;
+}
+.co-workers-table caption {
+  margin-bottom: 36px;
+  color: #B5B5BE;
+}
+thead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  z-index: 100;
+  background-color: #292932;
+}
+thead th {
+  position: relative;
+  padding: 12px 20px;
+  border-bottom-width: 1px;
+  color: #FAFAFB;
+}
+thead th::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #92929D;
+}
+thead th:first-child {
+  text-align: center;
+}
+
+tbody {
+  color: #B5B5BE;
+}
+tbody td {
+  position: relative;
+  padding: 16px 20px;
+  vertical-align: middle;
+  border-bottom-width: 1px;
+}
+tbody td::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #92929D;
+}
+
+.thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.thumb img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
+}
+
+.board {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  gap: 20px;
+}
+
+.board-item {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+     -moz-box-flex: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+          justify-content: space-between;
+  gap: 4px;
+  background-color: #292932;
+}
+.board-item .hide {
+  display: none;
+}
+
+.board-caption {
+  margin-bottom: 8px;
+  color: #FAFAFB;
+}
+
+.board-details {
+  margin-bottom: 20px;
+  color: #B5B5BE;
+}
+
+.person {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+          align-items: center;
+  gap: 8px;
+}
+
+.person-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.person-thumb img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
+}
+
+.board-right {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+          flex-direction: column;
+  min-height: 100%;
+}
+
+.board-teag {
+  margin-bottom: auto;
+  text-align: right;
+  color: #B5B5BE;
+}
+
+.badge-danger {
+  min-width: 96px;
+  padding: 4px 8px;
+  text-align: center;
+  color: #FAFAFB;
+  border-radius: 20px;
+  background-color: #FC5A5A;
+}
+
+.badge-warning {
+  min-width: 96px;
+  padding: 4px 8px;
+  text-align: center;
+  color: #FAFAFB;
+  border-radius: 20px;
+  background-color: #A461D8;
+}
+
+.badge-success {
+  min-width: 96px;
+  padding: 4px 8px;
+  text-align: center;
+  color: #FAFAFB;
+  border-radius: 20px;
+  background-color: #82C43C;
+}
+
 @media only screen and (min-width: 768px) {
   .main {
     gap: 36px;
@@ -755,9 +1055,15 @@ summary {
   .co-workers-details {
     display: none;
   }
+  .co-workers-table {
+    display: table;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
+  .board-item, .tasks {
+    padding: 24px;
+  }
   .page {
     display: grid;
     grid-template-columns: 248px 1fr;
@@ -783,6 +1089,9 @@ summary {
   .page-title-accent {
     margin-bottom: 16px;
   }
+  .tasks-list {
+    margin-right: -14px;
+  }
   .logo {
     padding: 16px 20px;
   }
@@ -803,12 +1112,26 @@ summary {
     background-color: #292932;
     border-radius: 12px;
   }
-  .co-workers {
-    min-height: 400px;
+  .co-workers-wrapper {
+    max-height: 400px;
     padding: 24px;
+    margin-bottom: 32px;
+    background-color: #1C1C24;
   }
   .co-workers-title {
     margin-bottom: 36px;
+  }
+  thead {
+    background-color: #1C1C24;
+  }
+  thead th::after {
+    background-color: #292932;
+  }
+  tbody td::after {
+    background-color: #292932;
+  }
+  .board-item {
+    background-color: #1C1C24;
   }
 }
 
