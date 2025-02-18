@@ -4,7 +4,7 @@
 @use '../utils/mixins' as mx;
 
 .tasks {
-    // grid-area: tasks;
+    grid-area: tasks;
 
     @extend %section-frame;
     min-width: 340px;

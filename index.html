@@ -687,6 +687,7 @@
              <input
              class="tasks-input visually-hidden"
              type="checkbox"
+             checked 
              name="tasks-status"
              value="unfinished"
              />
@@ -748,7 +749,7 @@
              value="unfinished"
              />
              <svg class="tasks-checkbox-icon" width="24" height="24">
-               <use href="./src/img/icons.svg#icon-check2"></use>
+               <use href="./src/img/icons.svg#icon-check"></use>
              </svg>
             </label>
  
@@ -777,7 +778,7 @@
              value="unfinished"
              />
              <svg class="tasks-checkbox-icon" width="24" height="24">
-               <use href="./src/img/icons.svg#icon-plus"></use>
+               <use href="./src/img/icons.svg#icon-check"></use>
              </svg>
             </label>
  
@@ -804,16 +805,16 @@
 
       <ul class="reports-list">
         <li class="reports-item" data-status="up">
-          <div class="reports-co-workers co-workers">
-            <div class="co-workers-thumb">
-              <img 
+          <div class="reports-staff staff">
+            <div class="staff-thumb">
+              <img
                   src="./src/img/thumb@2x.png" 
                   alt="thumb" 
                   width="32" 
                   height="32"
               >
             </div>
-            <h3 class="co-workers-caption">Ibnu Mas’ud</h3>
+            <h3 class="staff-caption">Ibnu Mas’ud</h3>
           </div>
           <progress class="reports-bar" id="report_ibnu" max="100" value="89">
             <div class="progress-bar">
@@ -821,7 +822,7 @@
             </div>
           </progress>
 
-          <svg class="reports-status" width="20" height="20">
+          <svg class="reports-icon" width="20" height="20">
             <use class="up" href="./src/img/icons.svg#icon-up"></use>
             <use class="dash" href="./src/img/icons.svg#icon-dash"></use>
             <use class="down" href="./src/img/icons.svg#icon-down"></use>
@@ -829,8 +830,8 @@
         </li>
 
         <li class="reports-item" data-status="dash">
-          <div class="reports-co-workers co-workers">
-            <div class="co-workers-thumb">
+          <div class="reports-staff staff">
+            <div class="staff-thumb">
               <img 
                   src="./src/img/thumb@2x.png" 
                   alt="thumb" 
@@ -838,7 +839,7 @@
                   height="32"
               >
             </div>
-            <h3 class="co-workers-caption">Kelen Indah</h3>
+            <h3 class="staff-caption">Kelen Indah</h3>
           </div>
           <progress class="reports-bar" id="report_ibnu" max="100" value="48">
             <div class="progress-bar">
@@ -846,7 +847,7 @@
             </div>
           </progress>
 
-          <svg class="reports-status" width="20" height="20">
+          <svg class="reports-icon" width="20" height="20">
             <use class="up" href="./src/img/icons.svg#icon-up"></use>
             <use class="dash" href="./src/img/icons.svg#icon-dash"></use>
             <use class="down" href="./src/img/icons.svg#icon-down"></use>
@@ -854,8 +855,8 @@
         </li>
 
         <li class="reports-item" data-status="up">
-          <div class="reports-co-workers co-workers">
-            <div class="co-workers-thumb">
+          <div class="reports-staff staff">
+            <div class="staff-thumb">
               <img 
                   src="./src/img/thumb@2x.png" 
                   alt="thumb" 
@@ -863,7 +864,7 @@
                   height="32"
               >
             </div>
-            <h3 class="co-workers-caption">Mas Indro</h3>
+            <h3 class="staff-caption">Mas Indro</h3>
           </div>
           <progress class="reports-bar" id="report_ibnu" max="100" value="58">
             <div class="progress-bar">
@@ -871,7 +872,7 @@
             </div>
           </progress>
 
-          <svg class="reports-status" width="20" height="20">
+          <svg class="reports-icon" width="20" height="20">
             <use class="up" href="./src/img/icons.svg#icon-up"></use>
             <use class="dash" href="./src/img/icons.svg#icon-dash"></use>
             <use class="down" href="./src/img/icons.svg#icon-down"></use>
@@ -879,8 +880,8 @@
         </li>
 
         <li class="reports-item" data-status="dash">
-          <div class="reports-co-workers co-workers">
-            <div class="co-workers-thumb">
+          <div class="reports-staff staff">
+            <div class="staff-thumb">
               <img 
                   src="./src/img/thumb@2x.png" 
                   alt="thumb" 
@@ -888,7 +889,7 @@
                   height="32"
               >
             </div>
-            <h3 class="co-workers-caption">Geo Vann</h3>
+            <h3 class="staff-caption">Geo Vann</h3>
           </div>
           <progress class="reports-bar" id="report_ibnu" max="100" value="64">
             <div class="progress-bar">
@@ -896,7 +897,7 @@
             </div>
           </progress>
 
-          <svg class="reports-status" width="20" height="20">
+          <svg class="reports-icon" width="20" height="20">
             <use class="up" href="./src/img/icons.svg#icon-up"></use>
             <use class="dash" href="./src/img/icons.svg#icon-dash"></use>
             <use class="down" href="./src/img/icons.svg#icon-down"></use>
@@ -904,8 +905,8 @@
         </li>
 
         <li class="reports-item" data-status="down">
-          <div class="reports-co-workers co-workers">
-            <div class="co-workers-thumb">
+          <div class="reports-staff staff">
+            <div class="staff-thumb">
               <img 
                   src="./src/img/thumb@2x.png" 
                   alt="thumb" 
@@ -913,7 +914,7 @@
                   height="32"
               >
             </div>
-            <h3 class="co-workers-caption">Avian Rizk</h3>
+            <h3 class="staff-caption">Avian Rizk</h3>
           </div>
           <progress class="reports-bar" id="report_ibnu" max="100" value="64">
             <div class="progress-bar">
@@ -921,7 +922,7 @@
             </div>
           </progress>
 
-          <svg class="reports-status" width="20" height="20">
+          <svg class="reports-icon" width="20" height="20">
             <use class="up" href="./src/img/icons.svg#icon-up"></use>
             <use class="dash" href="./src/img/icons.svg#icon-dash"></use>
             <use class="down" href="./src/img/icons.svg#icon-down"></use>

@@ -1,31 +1,122 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
+$reports-status: (
+    'success': 'up',
+    'warning': 'dash',
+    'danger': 'down',
+);
+
 .reports {
+    @extend %section-frame;
+
     grid-area: reports;
+
+    min-width: 340px;
+    background-color: fn.get-color('dark-tertiary');
 }
 
-// .reports-title {}
+.reports-title {
+    @extend %details;
 
-// .reports-list {
+    margin-bottom: 36px;
+    color: fn.get-color('light-secondary');
 
-// }
+    span {
+        @extend %accent-text;
+        color: fn.get-color('light-primary');
+    }
+}
 
-// .reports-item {}
+.reports-item {
+   display: flex;
+   align-items: center;
+   gap: 30px;
 
-// .reports-co-workers {}
+   @include mx.mq('md') {
+    gap: 32px;
+   }
 
-// .co-workers-thumb {}
+   &:not(:last-child) {
+    margin-bottom: 28px;
+   }
+}
 
-// .co-workers-caption {}
 
-// .reports-bar {}
+.reports-staff {
+   flex-grow: 1; 
+   flex-shrink: 0;
+}
 
-// .progress-bar {}
+.staff {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
 
-// .reports-status {}
+.staff-thumb {
+    @include mx.frame(32px, 32px, $is-circle: true);
+}
 
-// .up {
 
-// }
+.staff-caption {
+    @extend %details;
 
-// .dash {}
+    color: fn.get-color('light-secondary');
+}
 
-// .down {}
+.reports-bar {
+    width: calc(100% - 224px);
+    height: 4px;
+    appearance: none;
+
+
+    &[value] {
+        border-radius: 2px;
+    }
+
+    @each $key, $value in $reports-status {
+        [data-status='#{$value}'] & {
+            background-color: rgba(fn.get-color($key), 0.3);
+            
+            &::-moz-progress-bar {
+                background-color: rgba(fn.get-color($key), 1);
+            }
+            &::-webkit-progress-bar {
+                background-color: rgba(fn.get-color($key), 0.3);
+                border-radius: 2px;
+            }
+            &::-webkit-progress-value {
+                background-color: rgba(fn.get-color($key), 1);
+                border-radius: 2px;
+            }
+        }
+    }
+}
+
+.reports-icon {
+    flex-shrink: 0;
+
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+
+    border-radius: 4px;
+
+    use {
+        opacity: 0;
+        fill: fn.get-color('light-primary');
+    }
+
+    @each $key, $value in $reports-status {
+        [data-status='#{$value}'] & {
+          background-color: fn.get-color($key);
+
+        .#{$value} {
+          opacity: 1;
+        }
+    }
+    }
+}
