@@ -413,20 +413,19 @@ summary {
   -webkit-transition: 300ms ease;
   -moz-transition: 300ms ease;
   transition: 300ms ease;
-  -webkit-transition: fill, background-color, background-color;
-  -moz-transition: fill, background-color, background-color;
-  transition: fill, background-color, background-color;
+  -webkit-transition: fill, background-color, border-color;
+  -moz-transition: fill, background-color, border-color;
+  transition: fill, background-color, border-color;
+  fill: #292932;
   border: 1px solid;
   border-color: #92929D;
   border-radius: 4px;
 }
-
-.tasks-input:checked {
+.tasks-input:checked + .tasks-checkbox-icon {
   fill: #FAFAFB;
   background-color: #F07F2E;
 }
-
-.tasks-input:focus-visible {
+.tasks-input:focus-visible + .tasks-checkbox-icon {
   outline: 2px solid;
   outline-color: #92929D;
   outline-offset: 2px;
@@ -459,9 +458,8 @@ summary {
   color: #92929D;
   border-radius: 50%;
 }
-.tasks-btn:focus-visible {
-  outline: 2px solid;
-  outline-color: rgba(146, 146, 157, 0.6);
+.tasks-btn:focus, .tasks-btn:focus-visible {
+  outline: 2px solid rgba(146, 146, 157, 0.6);
   outline-offset: 2px;
 }
 .tasks-btn-icon {
