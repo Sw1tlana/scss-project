@@ -57,30 +57,25 @@
 }
 
 .tasks-checkbox-icon {
-    @include mx.ease('fast', fill, background-color, background-color);
-    fill: fn.get-color('transparent');
+    @include mx.ease('fast', fill, background-color, border-color);
+    fill: fn.get-color('dark-tertiary');
     border: 1px solid;
     border-color: fn.get-color('light-tertiary');
     border-radius: 4px;
+
+    .tasks-input:checked + & {
+        fill: fn.get-color('light-primary');
+        background-color: fn.get-color('accent-primary');
+        border-color: fn.get-color('transparent');
+    }
+    
+    .tasks-input:focus-visible + & {
+       outline: 2px solid;
+       outline-color: fn.get-color('light-tertiary');
+       outline-offset: 2px;
+    }
+
 }
-
-.tasks-input:checked  {
-    fill: fn.get-color('light-primary');
-    background-color: fn.get-color('accent-primary');
-    border-color: fn.get-color('transparent');
-}
-
-.tasks-input:focus-visible {
-   outline: 2px solid;
-   outline-color: fn.get-color('light-tertiary');
-   outline-offset: 2px;
-}
-
-// .controls-btn-icon {
-
-// }
-
-// .minus {}
 
 .tasks-info {
     flex-grow: 1;
@@ -106,9 +101,9 @@
     color: fn.get-color('light-tertiary');
     border-radius: 50%;
 
+    &:focus, 
     &:focus-visible {
-        outline: 2px solid;
-        outline-color: rgba(fn.get-color('light-tertiary'), 0.6);
+        outline: 2px solid rgba(fn.get-color('light-tertiary'), 0.6);
         outline-offset: 2px;
     }
 
@@ -117,4 +112,3 @@
     }
 }
 
-// .controls-btn-icon {}
