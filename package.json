@@ -16,7 +16,7 @@
     "autoprefixer": "^10.4.20",
     "fast-glob": "^3.3.3",
     "imagemin": "^8.0.1",
-    "imagemin-webp": "^6.1.0",
+    "imagemin-webp": "^4.1.0",
     "postcss-sort-media-queries": "^5.2.0",
     "prettier": "^3.5.1",
     "sass": "^1.85.0",

@@ -1,5 +1,6 @@
+@use "sass:list";
 
-@if index($btn-types, primary) {
+@if list.index($btn-types, primary) {
 
     .btn--primary {
         background-color: #F07F2E;
