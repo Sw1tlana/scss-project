@@ -858,6 +858,11 @@ summary {
   margin-bottom: 20px;
 }
 
+.co-workers-btn {
+  display: block;
+  margin: 0 auto;
+}
+
 .co-workers-details {
   padding: 16px 0;
 }
