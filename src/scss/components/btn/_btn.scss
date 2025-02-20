@@ -27,6 +27,9 @@ $btn-types: (
 );
 
 //Button base styles
-@forward "btn-base";
-@forward "types/primary";
+@import "btn-base";
+
+@import "types/primary";
+@import "types/secondary";
+
 

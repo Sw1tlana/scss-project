@@ -1,9 +1,8 @@
 @use 'sass:list';
 
-@if list.index($btn-types, primary) {
+@if list.index($btn-types, secondary) {
 
-    .btn--primary {
-        background-color: #F07F2E;
+    .btn--secondary {
 
         &:active {
             background-color: #D14A00;
@@ -12,9 +11,7 @@
         @media (hover: hover) {
             &:hover,
             &:focus {
-                box-shadow: 0px 4px 10px 0px rgba(240, 127, 46, 0.25);
-                /* accent-secondary */
-                background: #F15C27;
+                color: #F15C27;
             }
         }
 

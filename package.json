@@ -12,23 +12,36 @@
   "browserslist": [
     "cover 99.5%"
   ],
+  "overrides": {
+    "vite": {
+      "esbuild": "^0.25.0"
+    }
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "fast-glob": "^3.3.3",
     "imagemin": "^8.0.1",
-    "imagemin-webp": "^4.1.0",
+    "imagemin-webp": "^8.0.0",
     "postcss-sort-media-queries": "^5.2.0",
     "prettier": "^3.5.1",
     "sass": "^1.85.0",
     "sharp": "^0.33.5",
     "svgo": "^3.3.2",
-    "vite": "^4.4.5",
-    "vite-plugin-image-optimizer": "^1.1.7"
+    "vite": "^6.1.1",
+    "vite-plugin-image-optimizer": "^1.1.8"
   },
   "dependencies": {
+    "@jridgewell/sourcemap-codec": "^1.5.0",
+    "@rollup/plugin-terser": "^0.4.4",
     "body-scroll-lock": "^4.0.0-beta.0",
     "cacheable-request": "^13.0.3",
+    "cross-spawn": "^7.0.6",
+    "cssnano": "^7.0.6",
+    "esbuild": "^0.25.0",
     "got": "^14.4.6",
-    "http-cache-semantics": "^4.1.1"
+    "http-cache-semantics": "^4.1.1",
+    "postcss": "^8.5.3",
+    "semver-regex": "^4.0.5",
+    "serialize-javascript": "^6.0.2"
   }
 }
