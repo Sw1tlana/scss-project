@@ -1,0 +1,22 @@
+@use 'sass:list';
+
+@if list.index($btn-types, secondary) {
+
+    .btn--secondary {
+
+        &:active {
+            background-color: #D14A00;
+        }
+
+        @media (hover: hover) {
+            &:hover,
+            &:focus {
+                color: #F15C27;
+            }
+        }
+
+        &[disabled] {
+            background-color: #B5B5BE;
+        }
+    }
+}
