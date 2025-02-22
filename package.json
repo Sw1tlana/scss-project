@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "watch": "npx vite build --watch",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --verbose"
+    "deploy": "gh-pages -d dist"
 
   },
   "browserslist": [
