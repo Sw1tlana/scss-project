@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "watch": "npx vite build --watch",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --verbose"
 
   },
   "browserslist": [
@@ -22,6 +22,7 @@
     "imagemin": "^8.0.1",
     "postcss-sort-media-queries": "^5.2.0",
     "prettier": "^3.5.1",
+    "rimraf": "^6.0.1",
     "sass": "^1.85.0",
     "sharp": "^0.33.5",
     "svgo": "^3.3.2",
