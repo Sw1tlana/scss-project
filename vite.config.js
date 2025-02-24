@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 import glob from "fast-glob";
 import { fileURLToPath } from "url";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
-import { viteStaticCopy } from 'vite-plugin-static-copy'; // ✅ Додаємо плагін
+import { viteStaticCopy } from 'vite-plugin-static-copy'; 
 
 export default defineConfig({
   base: '/scss-project/',
