@@ -22,11 +22,15 @@ export default defineConfig({
       }),
       apply: "serve",
     },
-    viteStaticCopy({ // ✅ Копіюємо icons.svg
+    viteStaticCopy({ 
       targets: [
         {
-          src: 'src/img/icons.svg', // Звідки копіювати
-          dest: 'assets'            // Куди (dist/assets/icons.svg)
+          src: 'src/img/icons.svg', 
+          dest: 'assets'            
+        },
+        {
+          src: 'src/fonts/*.woff*', 
+          dest: 'assets'           
         }
       ]
     }),
